@@ -61,13 +61,13 @@ class MyNetwork(AlexNet):
             nn.BatchNorm1d(4096),  # 배치 정규화 추가
             nn.Linear(4096, num_classes),
         )
-    # def forward(self, x: torch.Tensor) -> torch.Tensor:
-        # [TODO: Optional] Modify this as well if you want
-        # x = self.features(x)
-        # x = self.avgpool(x)
-        # x = torch.flatten(x, 1)
-        # x = self.classifier(x)
-        # return x
+       def forward(self, x: torch.Tensor) -> torch.Tensor:
+          [TODO: Optional] Modify this as well if you want
+          x = self.features(x)
+          x = self.avgpool(x)
+          x = torch.flatten(x, 1)
+          x = self.classifier(x)
+          return x
     
 class SimpleCNN(nn.Module):
     def __init__(self, num_classes=200):
